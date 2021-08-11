@@ -1,0 +1,1 @@
+D:\Work2021\Devel\02\AppBukuT2\AppBuku.TMobileFromWeb\AppBuku.TMobileFromWeb.UWP\AppBuku.TMobileFromWeb.UWP.csproj;x86

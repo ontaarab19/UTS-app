@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:AppBuku.TMobileFromWeb.ViewModels" 
+             xmlns:models="clr-namespace:AppBuku.Models;assembly=AppBuku.Models"
+             x:DataType="viewmodels:ReviewBukuViewModel"
+             Title="{Binding Title}"
+             x:Class="AppBuku.TMobileFromWeb.Views.ReviewBukuPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:ReviewBukuViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout>
+                <Label Text="Nama" />
+                <Entry Text="{Binding ReviewById.Nama}" />
+                <Label Text="Isi Review" />
+                <Entry Text="{Binding ReviewById.IsiReview}" />
+                <Label Text="Rating (1 - 5)" />
+                <Entry Text="{Binding ReviewById.Rating}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Padding="0">
+                <Button Text="{Binding KirimText}" Margin="0,10,0,0" Command="{Binding CmdKirim}" />
+                <Button Text="Kembali" Margin="0, 10" Command="{Binding CmdBatal}"/>
+                <Button Text="Hapus" Margin="0" Command="{Binding CmdHapus}" IsVisible="{Binding HapusIsVisible}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:AppBuku.TMobileFromWeb.ViewModels"
+             x:DataType="viewmodels:UjiWebServiceViewModel"
+             Title="{Binding Title}"
+             x:Class="AppBuku.TMobileFromWeb.Views.UjiWebServicePage">
+    <ContentPage.BindingContext>
+        <viewmodels:UjiWebServiceViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <ActivityIndicator  IsRunning="{Binding IsBusy}" />
+            
+            <Button Text="GET DATA" Command="{Binding CmdGetData}" />
+            <Label Text="{Binding HasilGet}" TextColor="Blue" Margin="0,8" />
+            <Label Text="{Binding ReviewBukuGet.BukuId}" />
+            <Label Text="{Binding ReviewBukuGet.Nama}" />
+            <Label Text="{Binding ReviewBukuGet.Rating}" />
+            <Label Text="{Binding ReviewBukuGet.IsiReview}" />
+
+            <BoxView Margin="0,10" MinimumHeightRequest="2" HeightRequest="2" Color="Chartreuse" />
+            <Button Text="EDIT / HTTP PUT" Command="{Binding CmdPutData}" />
+            <Label Text="{Binding StatusPut}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
